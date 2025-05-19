@@ -1,82 +1,150 @@
-/* Global Styles */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f8f1f7;
-    color: #333;
+/* Reset & Base Styles */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fdf6fd;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #b38cd9;
+    padding: 20px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    height: 100vh;
+    flex-wrap: wrap;
 }
 
-.container {
-    text-align: center;
-    background-color: #e9d8f2;
-    border-radius: 15px;
-    padding: 60px;
-    width: 90%;
-    max-width: 600px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-    animation: fadeIn 1s ease-in-out;
-}
-
-.logo h1 {
-    font-size: 4em;
-    color: #6b3b9a;
-    margin: 0;
-    animation: bounce 1s infinite alternate;
-}
-
-.coming-soon {
-    font-size: 2em;
-    color: #4b285e;
-    margin: 20px 0;
+.header-logo {
+    font-size: 1.8rem;
     font-weight: bold;
+    color: white;
 }
 
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #f0d9ff;
+}
+
+/* Footer */
+footer {
+    background-color: #b38cd9;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 40px;
+}
+
+/* Main Container */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff0fc;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Social Icons */
 .social-icons {
-    margin: 30px 0;
+    margin-top: 20px;
 }
 
 .social-icons a {
-    text-decoration: none;
+    font-size: 1.8rem;
     color: #6b3b9a;
-    font-size: 2em;
-    margin: 0 15px;
-    transition: transform 0.3s, color 0.3s;
+    margin: 0 12px;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .social-icons a:hover {
     transform: scale(1.2);
-    color: #b38cd9;
+    color: #9d60c4;
 }
 
-footer {
+/* Tagline and Text */
+.tagline {
+    font-size: 1.4rem;
+    color: #6b3b9a;
+    margin-bottom: 20px;
+}
+
+/* Timer Styles */
+.timer-box {
+    background-color: #f3dcff;
+    border-radius: 12px;
+    padding: 40px 20px;
     margin-top: 30px;
-    font-size: 1.2em;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-footer p {
-    color: #522e70;
+#timer {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #4b285e;
 }
 
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+.controls button {
+    font-size: 1rem;
+    padding: 12px 24px;
+    margin: 0 10px;
+    background-color: #6b3b9a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-@keyframes bounce {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(-10px);
-    }
+.controls button:hover {
+    background-color: #8e57b4;
+}
+
+/* Portfolio Page Styles */
+main ul {
+    list-style: none;
+    text-align: left;
+    padding-left: 0;
+}
+
+main ul li {
+    margin: 12px 0;
+}
+
+main ul li a {
+    text-decoration: none;
+    color: #4b285e;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+main ul li a:hover {
+    color: #8e57b4;
+}
+
+h2, h3 {
+    color: #6b3b9a;
+    margin: 20px 0 10px;
 }

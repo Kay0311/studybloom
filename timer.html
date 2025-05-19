@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pomodoro Timer | Studybloom</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header>
+    <div class="header-logo">Studybloom</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="timer.html">Pomodoro</a></li>
+        <li><button id="settingsBtn" class="settings-icon">⚙️</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    
+<!--
+    <h2 class="tagline">Want to study at your own pace?</h2>
+    <div id="settingsPopup" class="settings-popup hidden">
+      <h3>Customize Your Timer</h3>
+      <label>Focus Duration (min):</label>
+      <input type="number" id="focusInput" min="1" value="25" />
+      <label>Break Duration (min):</label>
+      <input type="number" id="breakInput" min="1" value="5" />
+      <button onclick="applySettings()">Apply</button>
+      <button onclick="closeSettings()">Close</button>
+    </div>
+-->
+    <div class="timer-box">
+      <div id="status">Focus Time</div>
+      <div id="timer">25:00</div>
+      <div class="controls">
+        <button id="toggleBtn" onclick="toggleTimer()">Start</button>
+        <button onclick="resetTimer()">Reset</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Studybloom. All rights reserved.</p>
+  </footer>
+
+  <script>
+    let focusMinutes = 25;
+    let breakMinutes = 5;
+    let currentMinutes = focusMinutes;
+    let seconds = 0;
+    let timer;
+    let isFocus = true;
+    let isPaused = false;
+    let isRunning = false;
+
+    const settingsBtn = document.getElementById('settingsBtn');
+    const settingsPopup = document.getElementById('settingsPopup');
+
+    settingsBtn.addEventListener('click', () => {
+      settingsPopup.classList.toggle('hidden');
+    });
+
+    function closeSettings() {
+      settingsPopup.classList.add('hidden');
+    }
+
+    function updateDisplay() {
+      const min = String(currentMinutes).padStart(2, '0');
+      const sec = String(seconds).padStart(2, '0');
+      document.getElementById("timer").textContent = `${min}:${sec}`;
+    }
+
+    function applySettings() {
+      focusMinutes = parseInt(document.getElementById("focusInput").value);
+      breakMinutes = parseInt(document.getElementById("breakInput").value);
+      currentMinutes = focusMinutes;
+      seconds = 0;
+      isFocus = true;
+      isRunning = false;
+      isPaused = false;
+      document.getElementById("status").textContent = "Focus Time";
+      document.body.classList.remove("break-mode");
+      document.getElementById("toggleBtn").textContent = "Start";
+      updateDisplay();
+      closeSettings();
+    }
+
+    function toggleTimer() {
+      if (!isRunning) {
+        startTimer();
+        document.getElementById("toggleBtn").textContent = "Pause";
+        isRunning = true;
+        isPaused = false;
+      } else {
+        pauseTimer();
+        document.getElementById("toggleBtn").textContent = "Start";
+        isRunning = false;
+        isPaused = true;
+      }
+    }
+
+    function startTimer() {
+      timer = setInterval(() => {
+        if (seconds === 0) {
+          if (currentMinutes === 0) {
+            clearInterval(timer);
+            timer = null;
+            isRunning = false;
+            isFocus = !isFocus;
+            document.getElementById("status").textContent = isFocus ? "Focus Time" : "Break Time";
+            document.body.classList.toggle("break-mode", !isFocus);
+            currentMinutes = isFocus ? focusMinutes : breakMinutes;
+            seconds = 0;
+            updateDisplay();
+            toggleTimer();
+            return;
+          }
+          currentMinutes--;
+          seconds = 59;
+        } else {
+          seconds--;
+        }
+        updateDisplay();
+      }, 1000);
+    }
+
+    function pauseTimer() {
+      clearInterval(timer);
+      timer = null;
+    }
+
+    function resetTimer() {
+      clearInterval(timer);
+      timer = null;
+      isPaused = false;
+      isRunning = false;
+      document.getElementById("toggleBtn").textContent = "Start";
+      applySettings();
+    }
+
+    applySettings();
+  </script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio - Study Bloom</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fdf9ff;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      background-color: #e6d5f7;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      color: #5e3b88;
+    }
+
+    nav a {
+      margin-left: 1rem;
+      color: #5e3b88;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .portfolio-section {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .project {
+      background-color: #fff;
+      border: 2px solid #e6d5f7;
+      border-radius: 15px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    .project h2 {
+      margin-top: 0;
+      font-size: 1.5rem;
+      color: #5e3b88;
+      font-weight: 600;
+    }
+
+    .project h2 a {
+      color: #5e3b88;
+      text-decoration: none;
+    }
+
+    .project h2 a:hover {
+      text-decoration: underline;
+    }
+
+    .certifications h2 {
+      color: #5e3b88;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #f3eaff;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Portfolio</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="timer.html">Pomodoro</a>
+    </nav>
+  </header>
+
+  <main class="portfolio-section">
+    <section class="project">
+      <h2><a href="https://github.com/Kay0311/Machine-Learning--Recipe-Review-Rating-Prediction" target="_blank">Machine Learning - Recipe Rating Prediction</a></h2>
+      <p><em>Kaggle Competition</em></p>
+      <p>Predicted recipe ratings using features such as names, reviews, and other key details.</p>
+      <ul>
+        <li>Developed models using Python, Scikit-learn, and Pandas</li>
+      </ul>
+    </section>
+
+    <section class="project">
+      <h2><a href="https://github.com/Kay0311/Business-Data-Management-Project" target="_blank">Business Data Management and Analysis</a></h2>
+      <p><em>Data Analysis Project</em></p>
+      <p>Optimized inventory management and developed product bundles for profitability.</p>
+      <ul>
+        <li>Analyzed sales data to create product bundles</li>
+        <li>Technologies used: Python, Pandas, SQL</li>
+      </ul>
+    </section>
+
+    <section class="project">
+      <h2><a href="https://github.com/Kay0311/GroceryStore" target="_blank">Grocery Store Management System</a></h2>
+      <p><em>Application Development</em></p>
+      <p>Designed a system for managing inventory and orders.</p>
+      <ul>
+        <li>Technologies used: Python, SQLAlchemy (SQLite), Jinja2, Bootstrap, HTML, CSS</li>
+      </ul>
+    </section>
+
+    <section class="project">
+      <h2><a href="https://github.com/Kay0311/Grocery-Store-2" target="_blank">Grocery Store 2.0</a></h2>
+      <p><em>Application Development</em></p>
+      <p>Enhanced with login, order placement, and admin control.</p>
+      <ul>
+        <li>Technologies used: Vue.js, JavaScript, Python</li>
+      </ul>
+    </section>
+
+    <section class="certifications">
+      <h2>Certifications</h2>
+      <ul>
+        <li>Diploma in Data Science – IIT Madras</li>
+        <li>SQL Basics – HackerRank</li>
+        <li>Responsive Web Design – freeCodeCamp</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Study Bloom</p>
+  </footer>
+</body>
+</html>
